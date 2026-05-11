@@ -3837,9 +3837,4 @@ sprite_frames = SubResource("SpriteFrames_akxrc")
 animation = &"grape"
 autoplay = "no"
 
-[node name="Node2D" type="Node2D" parent="Node2D" unique_id=1960550498]
-
-[node name="move_aside" type="Node2D" parent="Node2D/Node2D" unique_id=13328647]
-position = Vector2(2559, -447)
-
 [connection signal="body_entered" from="Node2D/Gambler/Roller" to="Node2D/Gambler" method="_on_roller_body_entered"]

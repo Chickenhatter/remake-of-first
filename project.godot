@@ -14,6 +14,10 @@ config/name="remake_of_first"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*uid://c84xpfv5p8k0s"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
