@@ -22,9 +22,13 @@ func _process(delta: float) -> void:
 			roll = false
 			global.him = true
 			await get_tree().create_timer(1.0).timeout
+			d += 1
+			if d == 3:
+				$"../Tileset/TileMapLayer2".position = Vector2(1000,1000)
+				global.jim = true
+				d = 4
 			global.him = false
 			fin = Vector2(0,0)
-			d += 1
 			a = randi_range(1,3)
 			b = randi_range(1,3)
 			c = randi_range(1,3)
@@ -76,7 +80,7 @@ func _process(delta: float) -> void:
 			$Node2D/third/seven.play('no')
 			$Node2D/third/apple.play('no')
 			$Node2D/third/grape.play('no')
-		if d == 3:
+		if d == 4:
 			global.character_move = false
 			d = 0
 	
