@@ -22,16 +22,19 @@ func _process(delta: float) -> void:
 			roll = false
 			global.him = true
 			await get_tree().create_timer(1.0).timeout
-			d += 1
-			if d == 3:
-				$"../Tileset/TileMapLayer2".position = Vector2(1000,1000)
-				global.jim = true
-				d = 4
-			global.him = false
 			fin = Vector2(0,0)
 			a = randi_range(1,3)
 			b = randi_range(1,3)
 			c = randi_range(1,3)
+			if global.crosser == false:
+				d += 1
+				if d == 3:
+					$"../Tileset/TileMapLayer2".position = Vector2(1000,1000)
+					global.jim = true
+					d = 4
+				global.him = false
+			await get_tree().create_timer(1.0).timeout
+			$"../Tileset/TileMapLayer2".position = Vector2(0,0)
 		if a == 1:
 			$Node2D/first/seven.play('seven')
 			$Node2D/first/apple.play('no')
@@ -83,10 +86,14 @@ func _process(delta: float) -> void:
 		if d == 4:
 			global.character_move = false
 			d = 0
-	
+	if a == 1:
+		if b == 1:
+			if c == 1:
+				global.crosser = true
+				$"../Tileset/escape".global_position = Vector2(1000,1000)
 
 
 func _on_roller_body_entered(body: Node2D) -> void:
-	if roll != true:
+	if global.crosser != true:
 		if body.name == 'main_character':
 			roll = true

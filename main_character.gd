@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if global.down == true:
 		fin = $"../../Node2D/bottom".global_position 
 	if global.jim == true:
-		$".".global_position = position.move_toward(fin, 400 * delta)
+		$".".global_position = position.move_toward(fin, 500 * delta)
 	move_and_slide()
 
 
@@ -32,3 +32,22 @@ func _on_uptoleft_body_entered(body: Node2D) -> void:
 	if body.name == 'main_character':
 		fin = $"../../Node2D/left".global_position
 		global.down = false
+
+
+func _on_lefttoup_body_entered(body: Node2D) -> void:
+	if body.name == 'main_character':
+		fin = $"../../Node2D/top".global_position
+		global.down = false
+
+
+func _on_uptoright_body_entered(body: Node2D) -> void:
+	if body.name == 'main_character':
+		fin = $"../../Node2D/right".global_position
+		global.down = false
+
+
+func _on_stop_body_entered(body: Node2D) -> void:
+	if body.name == 'main_character':
+		global.character_move = true
+		global.jim = false
+		global.down = true
