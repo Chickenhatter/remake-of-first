@@ -5378,7 +5378,7 @@ size = Vector2(51, 64)
 size = Vector2(317.25, 385)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hm71"]
-size = Vector2(415, 253)
+size = Vector2(375, 253)
 
 [node name="Node2D" type="Node2D" unique_id=1063894411]
 
@@ -5387,7 +5387,7 @@ size = Vector2(415, 253)
 [node name="Character" type="Node2D" parent="Node2D" unique_id=1525105857]
 
 [node name="main_character" type="CharacterBody2D" parent="Node2D/Character" unique_id=2130123995]
-position = Vector2(23, 58)
+position = Vector2(6425, -148)
 script = ExtResource("1_nxogm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Character/main_character" unique_id=1006170578]
@@ -5571,12 +5571,18 @@ script = ExtResource("11_fy5k1")
 position = Vector2(-158.625, -70)
 shape = SubResource("RectangleShape2D_gu47o")
 
-[node name="Area2D" type="Area2D" parent="Node2D/Node2D2" unique_id=272135954]
+[node name="message" type="Area2D" parent="Node2D/Node2D2" unique_id=272135954]
 position = Vector2(6812, 43)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Node2D2/Area2D" unique_id=227921219]
-position = Vector2(35.5, -24.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Node2D2/message" unique_id=227921219]
+position = Vector2(15.5, -24.5)
 shape = SubResource("RectangleShape2D_8hm71")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/Node2D2" unique_id=1820833976]
+offset_left = 6640.0
+offset_top = -8.0
+offset_right = 6845.0
+offset_bottom = 76.0
 
 [connection signal="body_entered" from="Node2D/Gambler/Roller" to="Node2D/Gambler" method="_on_roller_body_entered"]
 [connection signal="body_entered" from="Node2D/Node2D/bottom/uptoleft" to="Node2D/Character/main_character" method="_on_uptoleft_body_entered"]
@@ -5585,3 +5591,4 @@ shape = SubResource("RectangleShape2D_8hm71")
 [connection signal="body_entered" from="Node2D/Node2D/right/stop" to="Node2D/Character/main_character" method="_on_stop_body_entered"]
 [connection signal="body_entered" from="Node2D/Node2D2/start_end" to="Node2D/Node2D2" method="_on_start_end_body_entered"]
 [connection signal="body_exited" from="Node2D/Node2D2/start_end" to="Node2D/Node2D2" method="_on_start_end_body_exited"]
+[connection signal="body_entered" from="Node2D/Node2D2/message" to="Node2D/Node2D2" method="_on_message_body_entered"]

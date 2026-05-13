@@ -6,7 +6,12 @@
 script = ExtResource("1_tqrfo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2071014495]
-offset_left = 244.0
-offset_top = 148.0
-offset_right = 844.0
-offset_bottom = 440.0
+offset_left = -112.0
+offset_top = -59.0
+offset_right = 112.0
+offset_bottom = 60.0
+fit_content = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=207471225]
+scale = Vector2(5, 5)
+zoom = Vector2(5, 5)
